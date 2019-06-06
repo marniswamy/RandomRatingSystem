@@ -1,6 +1,14 @@
+import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import { DashboardPage } from "./pages/DashboardPage";
+import { Provider } from "react-redux";
+import Store from "./store";
+import Routes from "./routes";
+import { browserHistory } from "react-router";
 
-ReactDOM.render(<DashboardPage />, document.getElementById("root"));
+ReactDOM.render(
+  <Provider store={Store()}>
+    <Routes history={browserHistory} />
+  </Provider>,
+  document.getElementById("root")
+);
