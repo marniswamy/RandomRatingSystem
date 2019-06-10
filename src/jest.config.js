@@ -2,8 +2,9 @@ require("babel-register");
 
 module.exports = {
   silent: true,
+  setupFiles: ["setupTest.js"],
   testRegex: "DO NOT RUN TESTS GLOBALLY",
-  collectCoverageFrom: ["src/**/*.js}", "!src/index.tsx"],
+  collectCoverageFrom: ["src/**/*.js}"],
   coverageReporters: ["json", "html", "text"],
   coverageThreshold: {
     global: {
@@ -13,7 +14,7 @@ module.exports = {
       statements: 0
     }
   },
-  testResultsProcessor: "jest-teamcity-reporter",
+  transformIgnorePatterns: ["<rootDir>/node_modules"],
   testPathIgnorePatterns: ["<rootDir>/node_modules"],
   projects: ["src"]
 };

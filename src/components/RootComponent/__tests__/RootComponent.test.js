@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { RootComponent } from '../RootComponent';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 describe('RootComponent', () => {
   it('should render component', () => {
-    const MountedRootComponent = mount(
+    const MountedRootComponent = shallow(
       <RootComponent />,
     );
     const expected = MountedRootComponent.exists();

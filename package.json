@@ -13,7 +13,8 @@
     "react-scripts": "3.0.1",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "seamless-immutable": "^7.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -23,6 +24,14 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "/node_modules/(?!@babel).+\\.js$"
+    ],
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    }
   },
   "browserslist": {
     "production": [
@@ -35,5 +44,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0"
   }
 }
